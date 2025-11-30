@@ -39,26 +39,41 @@ const NewProduct = () => {
     fetch(`${API_BASE}/products`, {
       method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-type": "application/json",
       },
       body: JSON.stringify(newProduct),
     }).then(() => {
-      alert("Data has been updated successfully..");
+      Swal.fire({
+        title: "New product is added ",
+        showClass: {
+          popup: `
+           animate__animated
+           animate__fadeInUp
+           animate__faster
+         `,
+        },
+        hideClass: {
+          popup: `
+           animate__animated
+           animate__fadeOutDown
+           animate__faster
+         `,
+        },
+      });
       setNewProduct({
-         
-    "title": "",
-    "price": 0,
-    "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
-    "category": "",
-    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
-    "rating": {
-      "rate": 0,
-      "count": 0
-    }
-    })
-
-    })}
-  
+        title: "",
+        price: 0,
+        description:
+          "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday",
+        category: "",
+        image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_t.png",
+        rating: {
+          rate: 0,
+          count: 0,
+        },
+      });
+    });
+  };
 
   let handleChange = (e) => {
     // e.target.value
@@ -172,7 +187,6 @@ const NewProduct = () => {
           style={{ margin: "10px", width: "50rem auto", height: "2rem" }}
           variant="contained"
           color="success"
-
         >
           ADD
         </Button>
@@ -180,6 +194,5 @@ const NewProduct = () => {
     </Paper>
   );
 };
-
 
 export default NewProduct;

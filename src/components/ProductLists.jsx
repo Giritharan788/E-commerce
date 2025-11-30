@@ -109,7 +109,7 @@ let SelectorData = useSelector((state)=>{return state.cart})
 
       dispatch(addItem(product))
        Swal.fire({
-        title: "The product is added ",
+        title: "The product is added to cart ",
         showClass: {
           popup: `
       animate__animated

@@ -1,3 +1,9 @@
+# Description 
+
+A minimal setup using the react advanced concepts like Handling global state using RTK(Redux Tool Kit) , Material UI , Routes , LocalStorage , Axious API
+
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.

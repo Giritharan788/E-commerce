@@ -35,7 +35,7 @@ const NewProduct = () => {
 
   let handleAdd = (e) => {
     e.preventDefault();
-    fetch("http://localhost:4000/products", {
+    fetch(`${API_BASE}/products`, {
       method: "POST",
       headers: {
         "Content-type": "application/json"

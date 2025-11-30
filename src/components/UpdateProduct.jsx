@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { API_BASE } from "../apiConfig";
 
 /*
  {
@@ -40,7 +41,7 @@ const UpdateProduct = () => {
 
   let { id } = useParams();
   useEffect(() => {
-    axios.get(`http://localhost:4000/products/${id}`).then((res) => {
+    axios.get(`${API_BASE}/products/${id}`).then((res) => {
       let ennRes = res.data;
       setUpdateProduct(ennRes);
     });
@@ -48,7 +49,7 @@ const UpdateProduct = () => {
 
   let handleSave = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:4000/products/${id}`, {
+    fetch(`${API_BASE}/products/${id}`, {
       method: "PUT",
       headers: {
         "Content-type": "application/json",

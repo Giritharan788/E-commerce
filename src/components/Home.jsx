@@ -1,8 +1,9 @@
 import React from 'react'
 import useFetch from './customHook/fetch'
+import { API_BASE } from '../apiConfig'
 
 const Home = () => {
-  let {products} = useFetch("http://localhost:4000/products")
+  let { products } = useFetch(`${API_BASE}/products`);
   return (
     <>
     <h1>Home - Number of Products - {products.length}</h1>

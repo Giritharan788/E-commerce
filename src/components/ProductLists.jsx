@@ -9,6 +9,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 import {addItem} from "../store/cartSlice"
 import { useDispatch,useSelector } from "react-redux";
+import { API_BASE } from "../apiConfig";
 
 // {
 //     "id": "1",
@@ -29,7 +30,7 @@ const ProductLists = () => {
   // const [loading, setLoading] = useState("true");
 
   // useEffect(() => {
-  //   fetch("http://localhost:4000/products", { method: "GET" })
+  //   fetch("http:///products", { method: "GET" })
   //     .then((response) => {
   //       if (response.ok) {
   //         return response.json();
@@ -48,7 +49,7 @@ const ProductLists = () => {
   //     })
   // }, []);
   let { products, loading, errors ,setProducts } = useFetch(
-    "http://localhost:4000/products"
+    `${API_BASE}/products`
   );
 
 
@@ -56,7 +57,7 @@ const ProductLists = () => {
 
 
   let handleDelete = (id) => {
-    axios.delete(`http://localhost:4000/products/${id}`)
+    axios.delete(`${API_BASE}/products/${id}`)
     .then(() => {
       Swal.fire({
         title: "Item is deleted",

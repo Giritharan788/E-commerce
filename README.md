@@ -1,6 +1,6 @@
 # Description 
 
-A minimal setup using the react advanced concepts like Handling global state using RTK(Redux Tool Kit) , Material UI , Routes , LocalStorage , Axious API
+A minimal setup using react advanced concepts like Routes , LocalStorage , Axious API , Material UI , Handling global state using RTK(Redux Tool Kit)
 
 
 

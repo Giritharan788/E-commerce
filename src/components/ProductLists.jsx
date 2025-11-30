@@ -151,7 +151,7 @@ let SelectorData = useSelector((state)=>{return state.cart})
     <div>
       <h1>Product Lists</h1>
 
-      <Button variant="success" style={{ margin: "10px" }} onClick={navigate("/NewProduct")}>
+      <Button variant="success" style={{ margin: "10px" }} onClick={()=>{navigate("/NewProduct")}}>
         Create
       </Button>
 
